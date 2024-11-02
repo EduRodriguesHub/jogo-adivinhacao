@@ -10,6 +10,7 @@
 from random import choice
 from maquina import lista
 from tela_inicio import titulo, subtitulo
+from cores import azul_claro
 
 print(titulo)
 print(subtitulo)
@@ -27,4 +28,4 @@ while user != escolha:
         print('Muito alto, tente chutar mais baixo!')
         user = int(input("Escolha um número de 1 a 100: "))
 
-print(f'Muito bem, Você acertou, Eu tinha escolhido o número {escolha}')
+print(f'{azul_claro}Muito bem, Você acertou, Eu tinha escolhido o número {escolha}\033[m')
