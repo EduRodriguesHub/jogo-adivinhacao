@@ -1,2 +1,3 @@
-titulo = '\033[1;32mBem vindo ao jogo de adivinhações!'
-subtitulo = '\033[1;33mBora testar a sorte?'
+from cores import verde, roxo
+titulo = f'{verde}Bem vindo ao jogo de adivinhações!\033[m'
+subtitulo = f'{roxo}Bora testar a sorte?\033[m'

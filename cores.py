@@ -1,0 +1,5 @@
+vermelho = '\033[31m'
+branco = '\033[0;30m'
+amarelo = '\033[1;33m'
+verde = '\033[1;32m'
+roxo = '\033[1;35m'
