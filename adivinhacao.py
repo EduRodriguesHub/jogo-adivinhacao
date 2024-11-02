@@ -8,19 +8,14 @@
 
 
 from random import choice
+from maquina import lista
 
-lista = []
-base = 0
-while len(lista) < 100:
-    numero = base + 1
-    lista.append(numero)
-    base = base + 1
 
 escolha = choice(lista)
 
 user = int(input("Escolha um número de 1 a 100: "))
 
-while user < escolha:
+'''while user < escolha:
     print('Muito baixo, tente chutar mais alto!')
     user = int(input("Escolha um número de 1 a 100: "))
     if user == escolha:
@@ -29,5 +24,14 @@ while user > escolha:
     print('Muito alto, tente chutar mais baixo!')
     user = int(input("Escolha um número de 1 a 100: "))
     if user == escolha:
-        print(f'Muito bem, Você acertou, Eu tinha escolhido o número {escolha}')
+        print(f'Muito bem, Você acertou, Eu tinha escolhido o número {escolha}')'''
 
+while user != escolha:
+    if user < escolha:
+        print('Muito baixo, tente chutar mais alto!')
+        user = int(input("Escolha um número de 1 a 100: "))
+    else:
+        print('Muito alto, tente chutar mais baixo!')
+    user = int(input("Escolha um número de 1 a 100: "))
+
+print(f'Muito bem, Você acertou, Eu tinha escolhido o número {escolha}')
