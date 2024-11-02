@@ -10,7 +10,6 @@
 from random import choice
 from maquina import lista
 
-
 escolha = choice(lista)
 
 user = int(input("Escolha um número de 1 a 100: "))
@@ -32,6 +31,6 @@ while user != escolha:
         user = int(input("Escolha um número de 1 a 100: "))
     else:
         print('Muito alto, tente chutar mais baixo!')
-    user = int(input("Escolha um número de 1 a 100: "))
+        user = int(input("Escolha um número de 1 a 100: "))
 
 print(f'Muito bem, Você acertou, Eu tinha escolhido o número {escolha}')
