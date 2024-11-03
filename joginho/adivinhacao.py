@@ -6,18 +6,23 @@
 #- se o número estiver muito baixo, diga para chutar mais alto
 #- se estiver correto, parabenize
 
-
 from random import choice
-from maquina import lista
-from tela_inicio import titulo, subtitulo
+from tela_inicio import titulo, subtitulo, lista_de_dificuldade
 from cores import azul_claro
-
-print(titulo)
-print(subtitulo)
-
+from branch.dificuldades import listad
+titulo
+subtitulo
+lista_de_dificuldade
 contador = 1
-escolha = choice(lista)
-user = int(input("Escolha um número de 1 a 100: "))
+escolha = choice(listad)
+if len(listad) == 50:
+    user = int(input("Escolha um número de 1 a 50: "))
+elif len(listad) == 100:
+    user = int(input('Escolha um número de 1 a 100: '))
+elif len(listad) == 150:
+    user = int(input('Escolha um número de 1 a 150: '))
+elif len(listad) == 200:
+    user = int(input('Escolha um número de 1 a 200: '))
 
 while user != escolha:
     if user < escolha:
