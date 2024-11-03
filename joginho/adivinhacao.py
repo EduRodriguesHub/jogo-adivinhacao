@@ -15,6 +15,7 @@ from cores import azul_claro
 print(titulo)
 print(subtitulo)
 
+contador = 1
 escolha = choice(lista)
 user = int(input("Escolha um número de 1 a 100: "))
 
@@ -25,5 +26,6 @@ while user != escolha:
     else:
         print('Muito alto, tente chutar mais baixo!')
         user = int(input("Escolha um número de 1 a 100: "))
+    contador = contador + 1
 
-print(f'{azul_claro}Muito bem, Você acertou, Eu tinha escolhido o número {escolha}\033[m')
+print(f'{azul_claro}Muito bem, Você acertou em {contador} tentativas, Eu tinha escolhido o número {escolha}\033[m')
