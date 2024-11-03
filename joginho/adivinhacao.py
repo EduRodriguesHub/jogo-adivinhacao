@@ -16,8 +16,6 @@ print(titulo)
 print(subtitulo)
 
 escolha = choice(lista)
-
-
 user = int(input("Escolha um número de 1 a 100: "))
 
 while user != escolha:
