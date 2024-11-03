@@ -9,7 +9,7 @@
 from random import choice
 from tela_inicio import titulo, subtitulo, lista_de_dificuldade
 from cores import azul_claro
-from branch.dificuldades import listad
+from dificuldades import listad
 titulo
 subtitulo
 lista_de_dificuldade

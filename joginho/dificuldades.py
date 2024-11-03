@@ -1,10 +1,11 @@
 from tela_inicio import lista_de_dificuldade
+from cores import vermelho
 userd = int(input('Escolha: '))
 listad = []
 escolhas = [1, 2, 3, 4]
 base = 0
 while userd not in escolhas:
-    errado = print('Não tem esse número na lista, escolha outro:')
+    errado = print(f'{vermelho}Não tem esse número na lista, escolha outro:\033[m')
     lista_de_dificuldade
     userd = int(input('Escolha: '))
 
