@@ -8,7 +8,7 @@
 
 from random import choice
 from tela_inicio import titulo, subtitulo, lista_de_dificuldade
-from cores import azul_claro
+from cores import azul_claro, amarelo
 from dificuldades import listad
 titulo
 subtitulo
@@ -16,13 +16,13 @@ lista_de_dificuldade
 contador = 1
 escolha = choice(listad)
 if len(listad) == 50:
-    user = int(input("Escolha um número de 1 a 50: "))
+    user = int(input("Escolha um número entre 1 e 50: "))
 elif len(listad) == 100:
-    user = int(input('Escolha um número de 1 a 100: '))
+    user = int(input('Escolha um número entre 1 e 100: '))
 elif len(listad) == 150:
-    user = int(input('Escolha um número de 1 a 150: '))
+    user = int(input('Escolha um número entre 1 e 150: '))
 elif len(listad) == 200:
-    user = int(input('Escolha um número de 1 a 200: '))
+    user = int(input('Escolha um número entre 1 e 200: '))
 
 while user != escolha:
     if user < escolha:
@@ -33,4 +33,4 @@ while user != escolha:
         user = int(input("Escolha um número de 1 a 100: "))
     contador = contador + 1
 
-print(f'{azul_claro}Muito bem, Você acertou em {contador} tentativas, Eu tinha escolhido o número {escolha}\033[m')
+print(f'{azul_claro}Muito bem! Você acertou em {amarelo}{contador}\033[m {azul_claro}tentativas, Eu tinha escolhido o número \033[m{amarelo}{escolha}\033[m')
