@@ -21,9 +21,18 @@ contador = 1
 numero_escolhido = choice(listad)
 
 intervalo = len(listad)
-user = int(input(f"Escolha um número de 1 a {intervalo}: "))
 
 while True:
+    # Retorno ao usuário
+    while True:
+        try:
+            user = int(input(f"Escolha um número de 1 a {intervalo}: "))
+            if user not in listad:
+                print(f"Número não encontrado na lista de 1 a {len(listad)}. Tente novamente.")
+            else:
+                break  # Sai do loop se o número estiver na lista
+        except ValueError:
+            print("Entrada inválida! Por favor, digite um número.")
     # Checa se o jogador acertou
     if user == numero_escolhido:
         sleep(0.5)
@@ -57,5 +66,5 @@ while True:
         sleep(0.5)
         print("Computador chutou alto!")
     sleep(0.5)
-    user = int(input(f"Escolha um número de 1 a {intervalo}: "))
+    
     contador += 1
