@@ -10,27 +10,52 @@ from random import choice
 from tela_inicio import titulo, subtitulo, lista_de_dificuldade
 from cores import azul_claro, amarelo
 from dificuldades import listad
+from branch.versus_maquina import maquina_lista_escolha
+from time import sleep
 titulo
+sleep(0.5)
 subtitulo
+sleep(0.5)
 lista_de_dificuldade
 contador = 1
-escolha = choice(listad)
-if len(listad) == 50:
-    user = int(input("Escolha um número entre 1 e 50: "))
-elif len(listad) == 100:
-    user = int(input('Escolha um número entre 1 e 100: '))
-elif len(listad) == 150:
-    user = int(input('Escolha um número entre 1 e 150: '))
-elif len(listad) == 200:
-    user = int(input('Escolha um número entre 1 e 200: '))
+numero_escolhido = choice(listad)
 
-while user != escolha:
-    if user < escolha:
-        print('Muito baixo, tente chutar mais alto!')
-        user = int(input("Escolha um número de 1 a 100: "))
+intervalo = len(listad)
+user = int(input(f"Escolha um número de 1 a {intervalo}: "))
+
+while True:
+    # Checa se o jogador acertou
+    if user == numero_escolhido:
+        sleep(0.5)
+        print(f"{azul_claro}Parabéns! Você acertou o número {amarelo}{numero_escolhido}\033[m {azul_claro}em {contador} tentativas!\033[m")
+        break
+
+    # Feedback para o jogador
+    if user < numero_escolhido:
+        sleep(0.5)
+        print("Jogador chutou baixo!")
     else:
-        print('Muito alto, tente chutar mais baixo!')
-        user = int(input("Escolha um número de 1 a 100: "))
-    contador = contador + 1
+        sleep(0.5)
+        print("Jogador chutou alto!")
 
-print(f'{azul_claro}Muito bem! Você acertou em {amarelo}{contador}\033[m {azul_claro}tentativas, Eu tinha escolhido o número \033[m{amarelo}{escolha}\033[m')
+    # Jogada do computador
+    computador_tentativa = maquina_lista_escolha[contador - 1]
+    sleep(0.5)
+    print(f"{amarelo}COMPUTADOR\033[m: eu escolhi {computador_tentativa}")
+
+    # Checa se o computador acertou
+    if computador_tentativa == numero_escolhido:
+        sleep(0.5)
+        print(f"{azul_claro}O computador acertou o número {amarelo}{numero_escolhido}\033[m {azul_claro}em {contador} tentativas!\033[m")
+        break
+
+    # Feedback para o computador
+    if computador_tentativa < numero_escolhido:
+        sleep(0.5)
+        print("Computador chutou baixo!")
+    else:
+        sleep(0.5)
+        print("Computador chutou alto!")
+    sleep(0.5)
+    user = int(input(f"Escolha um número de 1 a {intervalo}: "))
+    contador += 1
