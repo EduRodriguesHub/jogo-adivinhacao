@@ -23,7 +23,6 @@ numero_escolhido = choice(listad)
 intervalo = len(listad)
 
 while True:
-    # Retorno ao usuário
     while True:
         try:
             user = int(input(f"Escolha um número de 1 a {intervalo}: "))
