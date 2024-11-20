@@ -39,12 +39,6 @@ Adivinhar o número escolhido pelo programa antes que o computador acerte.
 Use suas habilidades de lógica para reduzir o intervalo de possibilidades!
 
 
-Estrutura do Projeto:
-
-jogo-adivinhacao/
-  ├── jogo_adivinhacao.py  # Código principal do jogo
-  ├── README.md            # Documentação do projeto
-
 📝 Melhorias Futuras
 
     Adicionar uma interface gráfica (GUI) para uma experiência mais visual.
