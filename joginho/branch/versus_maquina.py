@@ -9,7 +9,7 @@ from dificuldades import listad
 from random import choice
 
 contador = 0
-numero_escolhido = choice(listad)
+
 maquina_lista_escolha = []
 
 while len(maquina_lista_escolha) < len(listad):  # Limita tentativas ao tamanho da lista
