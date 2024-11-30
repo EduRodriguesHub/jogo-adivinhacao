@@ -1,7 +1,7 @@
 '''from random import choice'''
 from tela_inicio import titulo, subtitulo, lista_de_dificuldade
 from cores import azul_claro, amarelo
-from dificuldades import listad, numero_escolhido
+from dificuldades import listad, numero_escolhido, escolha
 from branch.versus_maquina import maquina_lista_escolha
 from time import sleep
 titulo
@@ -13,18 +13,17 @@ contador = 1
 
 
 intervalo = len(listad)
-
-user = int(input(f"Escolha um número de 1 a {intervalo}: "))
+tentativa = escolha('')
 
 while True:
     # Checa se o jogador acertou
-    if user == numero_escolhido:
+    if tentativa == numero_escolhido:
         sleep(0.5)
         print(f"{azul_claro}Parabéns! Você acertou o número {amarelo}{numero_escolhido}\033[m {azul_claro}em {contador} tentativas!\033[m")
         break
 
     # Feedback para o jogador
-    if user < numero_escolhido:
+    if tentativa < numero_escolhido:
         sleep(0.5)
         print("Jogador chutou baixo!")
     else:
@@ -50,5 +49,6 @@ while True:
         sleep(0.5)
         print("Computador chutou alto!")
     sleep(0.5)
-    user = int(input(f"Escolha um número de 1 a {intervalo}: "))
+
+    tentativa = escolha(tentativa)
     contador += 1
